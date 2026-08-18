@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Состав семьи WONG</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0f0f13;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    nav a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Поиск */
+    .search-box {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-box input {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background-color: #1a1a24;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .search-box input:focus {
+      border-color: #d4af37;
+    }
+
+    /* Секции и таблицы */
+    .section-title {
+      background: linear-gradient(90deg, #2a2a38, #1a1a24);
+      color: #d4af37;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-left: 4px solid #d4af37;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #161620;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1f1f2e;
+      color: #aaa;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr {
+      border-bottom: 1px solid #222230;
+      transition: background-color 0.2s;
+    }
+
+    tr:hover {
+      background-color: #20202e;
+    }
+
+    /* Статусы */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .status-active {
+      color: #2ecc71;
+    }
+
+    .status-inactive {
+      color: #e74c3c;
+      background-color: rgba(231, 76, 60, 0.15);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-active { background-color: #2ecc71; }
+    .dot-inactive { background-color: #e74c3c; }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #2a2a38;
+        border-radius: 8px;
+      }
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+      }
+      td:before {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #888;
+      }
+      td:nth-of-type(1):before { content: "Никнейм"; }
+      td:nth-of-type(2):before { content: "В семье"; }
+      td:nth-of-type(3):before { content: "На сервере"; }
+      td:nth-of-type(4):before { content: "Статус"; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <a href="index.html">← На главную страницу</a>
+  </nav>
+
+  <h1>⚜️ Состав семьи WONG ⚜️</h1>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" onkeyup="filterMembers()" placeholder="Поиск по нику, должности или организации...">
+  </div>
+
+  <!-- РУКОВОДСТВО СЕМЬИ -->
+  <div class="section-title">Руководство семьи</div>
+  <table class="member-table">
+    <thead>
+      <tr>
+        <th>Никнейм</th>
+        <th>Положение в семье</th>
+        <th>Положение на сервере</th>
+        <th>Статус</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Malik Wong</td><td>Лидер</td><td>Следящий МО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Lina Strogina</td><td>Заместитель</td><td>Секретарь МО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активна</span></td></tr>
+      <tr><td>Yumi Ramirez</td><td>Заместитель</td><td>ЗГС МЮ</td><td><span class="status status-active"><span class="dot dot-active"></span>Активна</span></td></tr>
+      <tr><td>Makima Watson</td><td>Заместитель</td><td>Следящая ГОС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активна</span></td></tr>
+      <tr><td>Rafael Svitinin</td><td>Заместитель</td><td>Следящий ГОС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Kanade Tachibana</td><td>Дизайнер</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивен</span></td></tr>
+      <tr><td>Charles Wong</td><td>Важная персона</td><td>8 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- АДМИНИСТРАЦИЯ СЕРВЕРА -->
+  <div class="section-title">Администрация сервера</div>
+  <table class="member-table">
+    <thead>
+      <tr>
+        <th>Никнейм</th>
+        <th>Положение в семье</th>
+        <th>Положение на сервере</th>
+        <th>Статус</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Alexander Gonzalez</td><td>Член семьи</td><td>ЗГС МО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Lori Wilson</td><td>Член семьи</td><td>ГС МЮ</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Alan Ramirez</td><td>Член семьи</td><td>Тех. Админ</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Vildan Galante</td><td>Член семьи</td><td>ГС ГОС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Maxim Klar</td><td>Член семьи</td><td>Следящий НО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Adelina Kelin</td><td>Член семьи</td><td>Следящая ЦА</td><td><span class="status status-active"><span class="dot dot-active"></span>Активна</span></td></tr>
+      <tr><td>Pavel Levchuk</td><td>Член семьи</td><td>ГС ЦА</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Chris Ramirez</td><td>Член семьи</td><td>ЗГС ГОС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Conor Reagen</td><td>Член семьи</td><td>ГС Гетто</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Matthew Wong</td><td>Член семьи</td><td>Следящий МО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Benjamin Clarkson</td><td>Член семьи</td><td>Следящий МО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Vlad Wong</td><td>Член семьи</td><td>ПГС МО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Ilya Kacincev</td><td>Член семьи</td><td>Хелпер</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Hawk Wong</td><td>Член семьи</td><td>ПГС МО</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ЛИДЕРЫ И ЗАМЕСТИТЕЛИ ОРГАНИЗАЦИЙ -->
+  <div class="section-title">Лидеры и заместители организаций</div>
+  <table class="member-table">
+    <thead>
+      <tr>
+        <th>Никнейм</th>
+        <th>Положение в семье</th>
+        <th>Положение на сервере</th>
+        <th>Статус</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Montgomery Ramirez</td><td>Член семьи</td><td>10 ФБР</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Roma Chikatilo</td><td>Член семьи</td><td>9 FBI</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Entixy Wong</td><td>Член семьи</td><td>10 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Azza Prince</td><td>Член семьи</td><td>10 ЛСПД</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Jayden Ostergaard</td><td>Член семьи</td><td>Судья</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Laurence Ramirez</td><td>Член семьи</td><td>9 FBI</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Nekko Necromancy</td><td>Член семьи</td><td>10 ТСР</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Albert Markelovani</td><td>Член семьи</td><td>10 РКШД</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Matrix Wong</td><td>Член семьи</td><td>9 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Bear Urban</td><td>Член семьи</td><td>9 ЛСа</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ЧЛЕНЫ СЕМЬИ -->
+  <div class="section-title">Члены семьи</div>
+  <table class="member-table">
+    <thead>
+      <tr>
+        <th>Никнейм</th>
+        <th>Положение в семье</th>
+        <th>Положение на сервере</th>
+        <th>Статус</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Matrix Wong</td><td>Член семьи</td><td>7 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Kirill Wong</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Aren Margelov</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивен</span></td></tr>
+      <tr><td>Roman Wong</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивен</span></td></tr>
+      <tr><td>Maks Wonger</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Shadow Shinigami</td><td>Член семьи</td><td>8 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Katana Pacage</td><td>Член семьи</td><td>8 СФПД</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Ryota Wong</td><td>Член семьи</td><td>8 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Trent Marseille</td><td>Член семьи</td><td>8 ТСР</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Samir Gadzhiev</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Marsel Daniarovich</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивен</span></td></tr>
+      <tr><td>Brian Dawely</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Gost Wonger</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Mario Sunblaze</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Kenzo Kross</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Andrei Kuzkoev</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивен</span></td></tr>
+      <tr><td>Kawka Allen</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Archez Wong</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивен</span></td></tr>
+      <tr><td>Filip Mellow</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Akari Watanabe</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивна</span></td></tr>
+      <tr><td>Gretta Ostergaard</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-inactive"><span class="dot dot-inactive"></span>Неактивна</span></td></tr>
+      <tr><td>Francesco Kennedy</td><td>Член семьи</td><td>8 ФБР</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Liminor Wong</td><td>Член семьи</td><td>4 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Mizter Wong</td><td>Член семьи</td><td>5 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Evgeniy Wong</td><td>Член семьи</td><td>7 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Mezejuki Wong</td><td>Член семьи</td><td>Игрок</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Miha Wong</td><td>Член семьи</td><td>5 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Guram Wong</td><td>Член семьи</td><td>6 ВМС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Anakin Muller</td><td>Член семьи</td><td>9 СМИ ЛС</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+      <tr><td>Kimura Yozakura</td><td>Член семьи</td><td>9 ЛСПД</td><td><span class="status status-active"><span class="dot dot-active"></span>Активен</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function filterMembers() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var rows = document.querySelectorAll(".member-table tbody tr");
+
+    rows.forEach(function(row) {
+      var text = row.textContent.toLowerCase();
+      if (text.indexOf(filter) > -1) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
