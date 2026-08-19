@@ -28,9 +28,7 @@
         }
 
         #particles-js {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             background: radial-gradient(circle at center, rgba(18, 17, 24, 0.3) 0%, rgba(5, 5, 7, 0.85) 100%);
         }
@@ -127,129 +125,89 @@
         <input type="text" id="searchInput" class="search-input" placeholder="Поиск по нику, должности или организации...">
     </div>
 
-    <div id="familyContent"></div>
+    <!-- РУКОВОДСТВО СЕМЬИ -->
+    <div class="section-title">РУКОВОДСТВО СЕМЬИ</div>
+    <div class="honeycomb">
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Malik Wong</div><div class="cell-role">Лидер</div><div class="cell-sub">Следящий МО</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Lina Strogina</div><div class="cell-role">Заместитель</div><div class="cell-sub">Секретарь МО</div><div class="status active">АКТИВНА</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Yumi Ramirez</div><div class="cell-role">Заместитель</div><div class="cell-sub">ЗГС МЮ</div><div class="status active">АКТИВНА</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Makima Watson</div><div class="cell-role">Заместитель</div><div class="cell-sub">Следящая ГОС</div><div class="status active">АКТИВНА</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Rafael Svitinin</div><div class="cell-role">Заместитель</div><div class="cell-sub">Следящий ГОС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Kanade Tachibana</div><div class="cell-role">Дизайнер</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Charles Wong</div><div class="cell-role">Важная персона</div><div class="cell-sub">8 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+    </div>
+
+    <!-- АДМИНИСТРАЦИЯ СЕРВЕРА -->
+    <div class="section-title">АДМИНИСТРАЦИЯ СЕРВЕРА</div>
+    <div class="honeycomb">
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Alexander Gonzalez</div><div class="cell-role">Член семьи</div><div class="cell-sub">ЗГС МО</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Alan Ramirez</div><div class="cell-role">Член семьи</div><div class="cell-sub">Тех. Админ</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Vildan Galante</div><div class="cell-role">Член семьи</div><div class="cell-sub">ГС ГОС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Maxim Klar</div><div class="cell-role">Член семьи</div><div class="cell-sub">Следящий НО</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Adelina Keln</div><div class="cell-role">Член семьи</div><div class="cell-sub">Следящая ЦА</div><div class="status active">АКТИВНА</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Pavel Levchuk</div><div class="cell-role">Член семьи</div><div class="cell-sub">ГС ЦА</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Chris Ramirez</div><div class="cell-role">Член семьи</div><div class="cell-sub">ЗГС ГОС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Conor Reagen</div><div class="cell-role">Член семьи</div><div class="cell-sub">ГС Гетто</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Matthew Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">Следящий МО</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Benjamin Clarcson</div><div class="cell-role">Член семьи</div><div class="cell-sub">Следящий МО</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">IIya Kacincev</div><div class="cell-role">Член семьи</div><div class="cell-sub">Хелпер</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Hawk Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">ПГС МО</div><div class="status active">АКТИВЕН</div></div></div>
+    </div>
+
+    <!-- ЛИДЕРЫ И ЗАМЕСТИТЕЛИ ОРГАНИЗАЦИЙ -->
+    <div class="section-title">ЛИДЕРЫ И ЗАМЕСТИТЕЛИ ОРГАНИЗАЦИЙ</div>
+    <div class="honeycomb">
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Montgomery Ramirez</div><div class="cell-role">Член семьи</div><div class="cell-sub">10 ФБР</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Roma Chikatilo</div><div class="cell-role">Член семьи</div><div class="cell-sub">9 FBI</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Entisy Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">10 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Asxa Prince</div><div class="cell-role">Член семьи</div><div class="cell-sub">10 ЛСПД</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Jayden Ostergaard</div><div class="cell-role">Член семьи</div><div class="cell-sub">Судья</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Laurence Ramirez</div><div class="cell-role">Член семьи</div><div class="cell-sub">9 FBI</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Nekko Necromancy</div><div class="cell-role">Член семьи</div><div class="cell-sub">10 ТСР</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Albert Markelovani</div><div class="cell-role">Член семьи</div><div class="cell-sub">10 РКШД</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Matrix Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">9 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Bear Urban</div><div class="cell-role">Член семьи</div><div class="cell-sub">9 ЛСа</div><div class="status active">АКТИВЕН</div></div></div>
+    </div>
+
+    <!-- ЧЛЕНЫ СЕМЬИ -->
+    <div class="section-title">ЧЛЕНЫ СЕМЬИ</div>
+    <div class="honeycomb">
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Lans Wilsson</div><div class="cell-role">Член семьи</div><div class="cell-sub">ГС МЮ</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Vlad Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">ПГС МО</div><div class="status active">АКТИВНА</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Matrix Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">7 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Kirill Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Aren Margelov</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Roman Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Maks Wonger</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Shadow Shinigami</div><div class="cell-role">Член семьи</div><div class="cell-sub">8 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Katana Pacage</div><div class="cell-role">Член семьи</div><div class="cell-sub">8 СФПД</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Ryota Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">8 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Trent Marseille</div><div class="cell-role">Член семьи</div><div class="cell-sub">8 ТСР</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Samir Gadjiev</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Marsel Daniarovich</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Brian Dawely</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Gost Wonger</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Mario Sunblaze</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Kenzo Kross</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Andrei Kuskovv</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Kawka Allen</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Archez Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Filip Mellow</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Akari Watanabe</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Gretta Ostergaard</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status inactive">НЕАКТИВ</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Francesco Kennedy</div><div class="cell-role">Член семьи</div><div class="cell-sub">8 ФБР</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Liminar Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">4 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Mister Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">5 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Evgeniy Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">7 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Mesejuki Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">Игрок</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Miha Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">5 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Guram Wong</div><div class="cell-role">Член семьи</div><div class="cell-sub">6 ВМС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Anakin Muller</div><div class="cell-role">Член семьи</div><div class="cell-sub">9 СМИ ЛС</div><div class="status active">АКТИВЕН</div></div></div>
+        <div class="cell"><div class="cell-inner"><div class="cell-name">Kimura Yozakura</div><div class="cell-role">Член семьи</div><div class="cell-sub">9 ЛСПД</div><div class="status active">АКТИВЕН</div></div></div>
+    </div>
 
     <script>
-        const familyData = [
-            {
-                section: "РУКОВОДСТВО СЕМЬИ",
-                members: [
-                    { name: "Malik Wong", role: "Лидер", sub: "Следящий МО", status: true },
-                    { name: "Lina Strogina", role: "Заместитель", sub: "Секретарь МО", status: true },
-                    { name: "Yumi Ramirez", role: "Заместитель", sub: "ЗГС МЮ", status: true },
-                    { name: "Makima Watson", role: "Заместитель", sub: "Следящая ГОС", status: true },
-                    { name: "Rafael Svitinin", role: "Заместитель", sub: "Следящий ГОС", status: true },
-                    { name: "Kanade Tachibana", role: "Дизайнер", sub: "Игрок", status: false },
-                    { name: "Charles Wong", role: "Важная персона", sub: "8 ВМС", status: true }
-                ]
-            },
-            {
-                section: "АДМИНИСТРАЦИЯ СЕРВЕРА",
-                members: [
-                    { name: "Alexander Gonzalez", role: "Член семьи", sub: "ЗГС МО", status: true },
-                    { name: "Alan Ramirez", role: "Член семьи", sub: "Тех. Админ", status: true },
-                    { name: "Vildan Galante", role: "Член семьи", sub: "ГС ГОС", status: true },
-                    { name: "Maxim Klar", role: "Член семьи", sub: "Следящий НО", status: true },
-                    { name: "Adelina Keln", role: "Член семьи", sub: "Следящая ЦА", status: true },
-                    { name: "Pavel Levchuk", role: "Член семьи", sub: "ГС ЦА", status: true },
-                    { name: "Chris Ramirez", role: "Член семьи", sub: "ЗГС ГОС", status: true },
-                    { name: "Conor Reagen", role: "Член семьи", sub: "ГС Гетто", status: true },
-                    { name: "Matthew Wong", role: "Член семьи", sub: "Следящий МО", status: true },
-                    { name: "Benjamin Clarcson", role: "Член семьи", sub: "Следящий МО", status: true },
-                    { name: "IIya Kacincev", role: "Член семьи", sub: "Хелпер", status: true },
-                    { name: "Hawk Wong", role: "Член семьи", sub: "ПГС МО", status: true }
-                ]
-            },
-            {
-                section: "ЛИДЕРЫ И ЗАМЕСТИТЕЛИ ОРГАНИЗАЦИЙ",
-                members: [
-                    { name: "Montgomery Ramirez", role: "Член семьи", sub: "10 ФБР", status: true },
-                    { name: "Roma Chikatilo", role: "Член семьи", sub: "9 FBI", status: true },
-                    { name: "Entisy Wong", role: "Член семьи", sub: "10 ВМС", status: true },
-                    { name: "Asxa Prince", role: "Член семьи", sub: "10 ЛСПД", status: true },
-                    { name: "Jayden Ostergaard", role: "Член семьи", sub: "Судья", status: true },
-                    { name: "Laurence Ramirez", role: "Член семьи", sub: "9 FBI", status: true },
-                    { name: "Nekko Necromancy", role: "Член семьи", sub: "10 ТСР", status: true },
-                    { name: "Albert Markelovani", role: "Член семьи", sub: "10 РКШД", status: true },
-                    { name: "Matrix Wong", role: "Член семьи", sub: "9 ВМС", status: true },
-                    { name: "Bear Urban", role: "Член семьи", sub: "9 ЛСа", status: true }
-                ]
-            },
-            {
-                section: "ЧЛЕНЫ СЕМЬИ",
-                members: [
-                    { name: "Lans Wilsson", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Vlad Wong", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Matrix Wong", role: "Член семьи", sub: "7 ВМС", status: true },
-                    { name: "Kirill Wong", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Aren Margelov", role: "Член семьи", sub: "Игрок", status: false },
-                    { name: "Roman Wong", role: "Член семьи", sub: "Игрок", status: false },
-                    { name: "Maks Wonger", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Shadow Shinigami", role: "Член семьи", sub: "8 ВМС", status: true },
-                    { name: "Katana Pacage", role: "Член семьи", sub: "8 СФПД", status: true },
-                    { name: "Ryota Wong", role: "Член семьи", sub: "8 ВМС", status: true },
-                    { name: "Trent Marseille", role: "Член семьи", sub: "8 ТСР", status: true },
-                    { name: "Samir Gadjiev", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Marsel Daniarovich", role: "Член семьи", sub: "Игрок", status: false },
-                    { name: "Brian Dawely", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Gost Wonger", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Mario Sunblaze", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Kenzo Kross", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Andrei Kuskovv", role: "Член семьи", sub: "Игрок", status: false },
-                    { name: "Kawka Allen", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Archez Wong", role: "Член семьи", sub: "Игрок", status: false },
-                    { name: "Filip Mellow", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Akari Watanabe", role: "Член семьи", sub: "Игрок", status: false },
-                    { name: "Gretta Ostergaard", role: "Член семьи", sub: "Игрок", status: false },
-                    { name: "Francesco Kennedy", role: "Член семьи", sub: "8 ФБР", status: true },
-                    { name: "Liminar Wong", role: "Член семьи", sub: "4 ВМС", status: true },
-                    { name: "Mister Wong", role: "Член семьи", sub: "5 ВМС", status: true },
-                    { name: "Evgeniy Wong", role: "Член семьи", sub: "7 ВМС", status: true },
-                    { name: "Mesejuki Wong", role: "Член семьи", sub: "Игрок", status: true },
-                    { name: "Miha Wong", role: "Член семьи", sub: "5 ВМС", status: true },
-                    { name: "Guram Wong", role: "Член семьи", sub: "6 ВМС", status: true },
-                    { name: "Anakin Muller", role: "Член семьи", sub: "9 СМИ ЛС", status: true },
-                    { name: "Kimura Yozakura", role: "Член семьи", sub: "9 ЛСПД", status: true }
-                ]
-            }
-        ];
-
-        function renderCards() {
-            const container = document.getElementById('familyContent');
-            container.innerHTML = '';
-
-            familyData.forEach(sec => {
-                const title = document.createElement('div');
-                title.className = 'section-title';
-                title.innerText = sec.section;
-                container.appendChild(title);
-
-                const grid = document.createElement('div');
-                grid.className = 'honeycomb';
-
-                sec.members.forEach(m => {
-                    const statusClass = m.status ? 'active' : 'inactive';
-                    const statusText = m.status ? 'АКТИВЕН' : 'НЕАКТИВ';
-
-                    const card = document.createElement('div');
-                    card.className = 'cell';
-                    card.innerHTML = `
-                        <div class="cell-inner">
-                            <div class="cell-name">${m.name}</div>
-                            <div class="cell-role">${m.role}</div>
-                            <div class="cell-sub">${m.sub}</div>
-                            <div class="status ${statusClass}">${statusText}</div>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
-
-                container.appendChild(grid);
-            });
-        }
-
-        renderCards();
-
+        // Поиск по карточкам
         document.getElementById('searchInput').addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase();
             document.querySelectorAll('.cell').forEach(cell => {
@@ -258,6 +216,7 @@
             });
         });
 
+        // Эффект частиц
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 50 },
