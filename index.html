@@ -5,20 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Состав Семьи WONG</title>
     
-    <!-- Подключение шрифтов Montserrat и Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Particles.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: #08080a;
@@ -28,374 +21,254 @@
             padding: 40px 20px;
             position: relative;
             overflow-x: hidden;
-            /* Фоновая сетка из тонких золотистых квадратов */
             background-image: 
                 linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
 
-        /* Контейнер для частиц поверх фона */
         #particles-js {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -1;
             background: radial-gradient(circle at center, rgba(18, 17, 24, 0.3) 0%, rgba(5, 5, 7, 0.85) 100%);
         }
 
-        /* Верхняя кнопка возврата */
-        .top-btn {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
+        .top-btn { display: flex; justify-content: center; margin-bottom: 25px; }
         .top-btn a {
-            color: #d4af37;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            padding: 8px 16px;
+            color: #d4af37; text-decoration: none;
+            font-family: 'Cinzel', serif; font-size: 13px;
+            letter-spacing: 2px; padding: 8px 16px;
             border: 1px solid rgba(212, 175, 55, 0.4);
             background: rgba(15, 15, 20, 0.7);
             transition: all 0.3s ease;
         }
+        .top-btn a:hover { background: rgba(212, 175, 55, 0.15); box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
 
-        .top-btn a:hover {
-            background: rgba(212, 175, 55, 0.15);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Главный заголовок страницы */
         .main-title {
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 32px;
-            font-weight: 900;
-            color: #fce8ad;
-            letter-spacing: 4px;
-            text-transform: uppercase;
+            text-align: center; font-family: 'Cinzel', serif;
+            font-size: 32px; font-weight: 900; color: #fce8ad;
+            letter-spacing: 4px; text-transform: uppercase;
             text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
             margin-bottom: 25px;
         }
+        .main-title span { color: #d4af37; margin: 0 10px; }
 
-        .main-title span {
-            color: #d4af37;
-            margin: 0 10px;
-        }
-
-        /* Поле поиска */
-        .search-container {
-            max-width: 500px;
-            margin: 0 auto 40px auto;
-        }
-
+        .search-container { max-width: 500px; margin: 0 auto 40px auto; }
         .search-input {
-            width: 100%;
-            padding: 12px 20px;
+            width: 100%; padding: 12px 20px;
             background: rgba(12, 12, 16, 0.8);
             border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            color: #fff;
-            font-size: 13px;
-            outline: none;
-            text-align: center;
-            transition: all 0.3s ease;
+            border-radius: 20px; color: #fff; font-size: 13px;
+            outline: none; text-align: center; transition: all 0.3s ease;
         }
+        .search-input:focus { border-color: #d4af37; box-shadow: 0 0 12px rgba(212, 175, 55, 0.25); }
 
-        .search-input:focus {
-            border-color: #d4af37;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
-        }
-
-        /* Плашка разделов */
         .section-title {
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: #f3e5ab;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin: 40px auto 30px auto;
-            padding: 10px 20px;
-            max-width: 980px;
-            background: rgba(18, 18, 24, 0.85);
+            text-align: center; font-family: 'Cinzel', serif;
+            font-size: 18px; font-weight: 700; color: #f3e5ab;
+            letter-spacing: 3px; text-transform: uppercase;
+            margin: 45px auto 30px auto; padding: 10px 20px;
+            max-width: 1050px; background: rgba(18, 18, 24, 0.85);
             border: 1px solid rgba(212, 175, 55, 0.25);
             border-left: 4px solid #d4af37;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
-        /* Контейнер сетки сот */
         .honeycomb {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 12px 14px;
-            max-width: 1050px;
-            margin: 0 auto 30px auto;
+            display: flex; flex-wrap: wrap;
+            justify-content: center; align-items: center;
+            gap: 12px 14px; max-width: 1100px;
+            margin: 0 auto 20px auto;
         }
 
-        /* Ограничиваем ширину первого ряда, чтобы влезало ровно 5 сот, а остальные уходили вниз */
-        .honeycomb-grid {
-            max-width: 1060px;
-        }
-
-        /* Оболочка соты */
         .cell {
-            width: 190px;
-            height: 215px;
+            width: 185px; height: 210px;
             background: linear-gradient(135deg, #d4af37 0%, #3a2e0c 50%, #d4af37 100%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            margin-bottom: -20px; /* Отрицательный отступ создаёт нахлест рядов */
+            display: flex; justify-content: center; align-items: center;
+            padding: 2px; transition: all 0.3s ease; cursor: pointer;
+            margin-bottom: -15px;
         }
+        .cell:hover { transform: translateY(-5px) scale(1.03); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6)); }
 
-        .cell:hover {
-            transform: translateY(-5px) scale(1.03);
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
-        }
-
-        /* Внутренняя область соты */
         .cell-inner {
-            width: 100%;
-            height: 100%;
-            background: #0f0f13;
+            width: 100%; height: 100%; background: #0f0f13;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 15px;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; padding: 12px;
         }
 
-        .cell-name {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: #ffffff;
-            margin-bottom: 6px;
-        }
+        .cell-name { font-weight: 700; font-size: 13px; color: #fff; margin-bottom: 4px; word-break: break-word; }
+        .cell-role { font-size: 11px; color: #d4af37; font-weight: 600; margin-bottom: 2px; }
+        .cell-sub { font-size: 10px; color: #aaa; margin-bottom: 8px; }
 
-        .cell-role {
-            font-size: 11px;
-            color: #d4af37;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-
-        .cell-sub {
-            font-size: 10px;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .status {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .status::before {
-            content: '';
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-        }
-
-        .status.active {
-            color: #2ecc71;
-        }
-
-        .status.active::before {
-            background-color: #2ecc71;
-            box-shadow: 0 0 6px #2ecc71;
-        }
-
-        .status.inactive {
-            color: #e74c3c;
-        }
-
-        .status.inactive::before {
-            background-color: #e74c3c;
-            box-shadow: 0 0 6px #e74c3c;
-        }
+        .status { font-size: 9px; font-weight: 700; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
+        .status::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; }
+        .status.active { color: #2ecc71; }
+        .status.active::before { background-color: #2ecc71; box-shadow: 0 0 6px #2ecc71; }
+        .status.inactive { color: #e74c3c; }
+        .status.inactive::before { background-color: #e74c3c; box-shadow: 0 0 6px #e74c3c; }
     </style>
 </head>
 <body>
 
-    <!-- Фон частиц -->
     <div id="particles-js"></div>
 
-    <!-- Кнопка возврата -->
     <div class="top-btn">
         <a href="#">&larr; НА ГЛАВНУЮ СТРАНИЦУ</a>
     </div>
 
-    <!-- Главный заголовок -->
     <h1 class="main-title"><span>&amp;</span> СОСТАВ СЕМЬИ WONG <span>&amp;</span></h1>
 
-    <!-- Поиск -->
     <div class="search-container">
-        <input type="text" class="search-input" placeholder="Поиск по нику, должности или организации...">
+        <input type="text" id="searchInput" class="search-input" placeholder="Поиск по нику, должности или организации...">
     </div>
 
-    <!-- Заголовок блока -->
-    <div class="section-title">РУКОВОДСТВО СЕМЬИ</div>
+    <div id="familyContent"></div>
 
-    <!-- Сетка сот (5 элементов в верхнем ряду, 2 соты под ними) -->
-    <div class="honeycomb honeycomb-grid">
-        <!-- 1: Malik Wong -->
-        <div class="cell">
-            <div class="cell-inner">
-                <div class="cell-name">Malik Wong</div>
-                <div class="cell-role">Лидер</div>
-                <div class="cell-sub">Следящий МО</div>
-                <div class="status active">АКТИВЕН</div>
-            </div>
-        </div>
-
-        <!-- 2: Lina Strogina -->
-        <div class="cell">
-            <div class="cell-inner">
-                <div class="cell-name">Lina Strogina</div>
-                <div class="cell-role">Заместитель</div>
-                <div class="cell-sub">Секретарь МО</div>
-                <div class="status active">АКТИВНА</div>
-            </div>
-        </div>
-
-        <!-- 3: Yumi Ramirez -->
-        <div class="cell">
-            <div class="cell-inner">
-                <div class="cell-name">Yumi Ramirez</div>
-                <div class="cell-role">Заместитель</div>
-                <div class="cell-sub">ЗГС МЮ</div>
-                <div class="status active">АКТИВНА</div>
-            </div>
-        </div>
-
-        <!-- 4: Makima Watson -->
-        <div class="cell">
-            <div class="cell-inner">
-                <div class="cell-name">Makima Watson</div>
-                <div class="cell-role">Заместитель</div>
-                <div class="cell-sub">Следящая ГОС</div>
-                <div class="status active">АКТИВНА</div>
-            </div>
-        </div>
-
-        <!-- 5: Rafael Svitinin -->
-        <div class="cell">
-            <div class="cell-inner">
-                <div class="cell-name">Rafael Svitinin</div>
-                <div class="cell-role">Заместитель</div>
-                <div class="cell-sub">Следящий ГОС</div>
-                <div class="status active">АКТИВЕН</div>
-            </div>
-        </div>
-
-        <!-- 6: Kanade Tachibana (Второй ряд слева) -->
-        <div class="cell">
-            <div class="cell-inner">
-                <div class="cell-name">Kanade Tachibana</div>
-                <div class="cell-role">Дизайнер</div>
-                <div class="cell-sub">Игрок</div>
-                <div class="status inactive">НЕАКТИВЕН</div>
-            </div>
-        </div>
-
-        <!-- 7: Charles Wong (Второй ряд справа) -->
-        <div class="cell">
-            <div class="cell-inner">
-                <div class="cell-name">Charles Wong</div>
-                <div class="cell-role">Важная персона</div>
-                <div class="cell-sub">8 ВМС</div>
-                <div class="status active">АКТИВЕН</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Инициализация particles.js -->
     <script>
+        const familyData = [
+            {
+                section: "РУКОВОДСТВО СЕМЬИ",
+                members: [
+                    { name: "Malik Wong", role: "Лидер", sub: "Следящий МО", status: true },
+                    { name: "Lina Strogina", role: "Заместитель", sub: "Секретарь МО", status: true },
+                    { name: "Yumi Ramirez", role: "Заместитель", sub: "ЗГС МЮ", status: true },
+                    { name: "Makima Watson", role: "Заместитель", sub: "Следящая ГОС", status: true },
+                    { name: "Rafael Svitinin", role: "Заместитель", sub: "Следящий ГОС", status: true },
+                    { name: "Kanade Tachibana", role: "Дизайнер", sub: "Игрок", status: false },
+                    { name: "Charles Wong", role: "Важная персона", sub: "8 ВМС", status: true }
+                ]
+            },
+            {
+                section: "АДМИНИСТРАЦИЯ СЕРВЕРА",
+                members: [
+                    { name: "Alexander Gonzalez", role: "Член семьи", sub: "ЗГС МО", status: true },
+                    { name: "Alan Ramirez", role: "Член семьи", sub: "Тех. Админ", status: true },
+                    { name: "Vildan Galante", role: "Член семьи", sub: "ГС ГОС", status: true },
+                    { name: "Maxim Klar", role: "Член семьи", sub: "Следящий НО", status: true },
+                    { name: "Adelina Keln", role: "Член семьи", sub: "Следящая ЦА", status: true },
+                    { name: "Pavel Levchuk", role: "Член семьи", sub: "ГС ЦА", status: true },
+                    { name: "Chris Ramirez", role: "Член семьи", sub: "ЗГС ГОС", status: true },
+                    { name: "Conor Reagen", role: "Член семьи", sub: "ГС Гетто", status: true },
+                    { name: "Matthew Wong", role: "Член семьи", sub: "Следящий МО", status: true },
+                    { name: "Benjamin Clarcson", role: "Член семьи", sub: "Следящий МО", status: true },
+                    { name: "IIya Kacincev", role: "Член семьи", sub: "Хелпер", status: true },
+                    { name: "Hawk Wong", role: "Член семьи", sub: "ПГС МО", status: true }
+                ]
+            },
+            {
+                section: "ЛИДЕРЫ И ЗАМЕСТИТЕЛИ ОРГАНИЗАЦИЙ",
+                members: [
+                    { name: "Montgomery Ramirez", role: "Член семьи", sub: "10 ФБР", status: true },
+                    { name: "Roma Chikatilo", role: "Член семьи", sub: "9 FBI", status: true },
+                    { name: "Entisy Wong", role: "Член семьи", sub: "10 ВМС", status: true },
+                    { name: "Asxa Prince", role: "Член семьи", sub: "10 ЛСПД", status: true },
+                    { name: "Jayden Ostergaard", role: "Член семьи", sub: "Судья", status: true },
+                    { name: "Laurence Ramirez", role: "Член семьи", sub: "9 FBI", status: true },
+                    { name: "Nekko Necromancy", role: "Член семьи", sub: "10 ТСР", status: true },
+                    { name: "Albert Markelovani", role: "Член семьи", sub: "10 РКШД", status: true },
+                    { name: "Matrix Wong", role: "Член семьи", sub: "9 ВМС", status: true },
+                    { name: "Bear Urban", role: "Член семьи", sub: "9 ЛСа", status: true }
+                ]
+            },
+            {
+                section: "ЧЛЕНЫ СЕМЬИ",
+                members: [
+                    { name: "Lans Wilsson", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Vlad Wong", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Matrix Wong", role: "Член семьи", sub: "7 ВМС", status: true },
+                    { name: "Kirill Wong", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Aren Margelov", role: "Член семьи", sub: "Игрок", status: false },
+                    { name: "Roman Wong", role: "Член семьи", sub: "Игрок", status: false },
+                    { name: "Maks Wonger", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Shadow Shinigami", role: "Член семьи", sub: "8 ВМС", status: true },
+                    { name: "Katana Pacage", role: "Член семьи", sub: "8 СФПД", status: true },
+                    { name: "Ryota Wong", role: "Член семьи", sub: "8 ВМС", status: true },
+                    { name: "Trent Marseille", role: "Член семьи", sub: "8 ТСР", status: true },
+                    { name: "Samir Gadjiev", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Marsel Daniarovich", role: "Член семьи", sub: "Игрок", status: false },
+                    { name: "Brian Dawely", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Gost Wonger", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Mario Sunblaze", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Kenzo Kross", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Andrei Kuskovv", role: "Член семьи", sub: "Игрок", status: false },
+                    { name: "Kawka Allen", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Archez Wong", role: "Член семьи", sub: "Игрок", status: false },
+                    { name: "Filip Mellow", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Akari Watanabe", role: "Член семьи", sub: "Игрок", status: false },
+                    { name: "Gretta Ostergaard", role: "Член семьи", sub: "Игрок", status: false },
+                    { name: "Francesco Kennedy", role: "Член семьи", sub: "8 ФБР", status: true },
+                    { name: "Liminar Wong", role: "Член семьи", sub: "4 ВМС", status: true },
+                    { name: "Mister Wong", role: "Член семьи", sub: "5 ВМС", status: true },
+                    { name: "Evgeniy Wong", role: "Член семьи", sub: "7 ВМС", status: true },
+                    { name: "Mesejuki Wong", role: "Член семьи", sub: "Игрок", status: true },
+                    { name: "Miha Wong", role: "Член семьи", sub: "5 ВМС", status: true },
+                    { name: "Guram Wong", role: "Член семьи", sub: "6 ВМС", status: true },
+                    { name: "Anakin Muller", role: "Член семьи", sub: "9 СМИ ЛС", status: true },
+                    { name: "Kimura Yozakura", role: "Член семьи", sub: "9 ЛСПД", status: true }
+                ]
+            }
+        ];
+
+        function renderCards() {
+            const container = document.getElementById('familyContent');
+            container.innerHTML = '';
+
+            familyData.forEach(sec => {
+                const title = document.createElement('div');
+                title.className = 'section-title';
+                title.innerText = sec.section;
+                container.appendChild(title);
+
+                const grid = document.createElement('div');
+                grid.className = 'honeycomb';
+
+                sec.members.forEach(m => {
+                    const statusClass = m.status ? 'active' : 'inactive';
+                    const statusText = m.status ? 'АКТИВЕН' : 'НЕАКТИВ';
+
+                    const card = document.createElement('div');
+                    card.className = 'cell';
+                    card.innerHTML = `
+                        <div class="cell-inner">
+                            <div class="cell-name">${m.name}</div>
+                            <div class="cell-role">${m.role}</div>
+                            <div class="cell-sub">${m.sub}</div>
+                            <div class="status ${statusClass}">${statusText}</div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                container.appendChild(grid);
+            });
+        }
+
+        renderCards();
+
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            document.querySelectorAll('.cell').forEach(cell => {
+                const text = cell.textContent.toLowerCase();
+                cell.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        });
+
         particlesJS("particles-js", {
             "particles": {
-                "number": {
-                    "value": 45,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#d4af37"
-                },
-                "shape": {
-                    "type": "circle"
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": true
-                },
-                "size": {
-                    "value": 3,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 140,
-                    "color": "#d4af37",
-                    "opacity": 0.3,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 1.2,
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
+                "number": { "value": 50 },
+                "color": { "value": "#d4af37" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 140, "color": "#d4af37", "opacity": 0.35, "width": 1 },
+                "move": { "enable": true, "speed": 1.2 }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": false
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 0.6
-                        }
-                    }
-                }
-            },
-            "retina_detect": true
+            "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
         });
     </script>
 </body>
