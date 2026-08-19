@@ -3,32 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Состав семьи WONG</title>
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap');
+    <title>Состав Семьи WONG</title>
+    
+    <!-- Подключение шрифтов Montserrat и Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Кастомный скроллбар */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #08080a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #332d1d;
-            border-radius: 4px;
-            border: 1px solid #d4af37;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
         }
 
         body {
@@ -39,9 +28,14 @@
             padding: 40px 20px;
             position: relative;
             overflow-x: hidden;
+            /* Фоновая сетка из тонких золотистых квадратов */
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        /* Интерактивный фон */
+        /* Контейнер для частиц поверх фона */
         #particles-js {
             position: fixed;
             top: 0;
@@ -49,762 +43,325 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: 
-                radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at center, #121118 0%, #050507 100%);
+            background: radial-gradient(circle at center, rgba(18, 17, 24, 0.3) 0%, rgba(5, 5, 7, 0.85) 100%);
         }
 
-        .container {
-            max-width: 1350px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+        /* Верхняя кнопка возврата */
+        .top-btn {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
         }
 
-        /* Кнопка «На главную» */
-        .btn-back-container {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .btn-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 28px;
-            border: 1px solid #d4af37;
+        .top-btn a {
             color: #d4af37;
             text-decoration: none;
             font-family: 'Cinzel', serif;
             font-size: 13px;
-            font-weight: 700;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            padding: 8px 16px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: rgba(15, 15, 20, 0.7);
             transition: all 0.3s ease;
-            background: rgba(15, 15, 20, 0.75);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
-            border-radius: 2px;
         }
 
-        .btn-back:hover {
-            background: #d4af37;
-            color: #000;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-            transform: translateY(-2px);
+        .top-btn a:hover {
+            background: rgba(212, 175, 55, 0.15);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
-        /* Заголовок */
-        .header {
+        /* Главный заголовок страницы */
+        .main-title {
             text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .header h1 {
             font-family: 'Cinzel', serif;
-            font-size: 42px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff 0%, #f3e5ab 50%, #d4af37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            font-size: 32px;
+            font-weight: 900;
+            color: #fce8ad;
             letter-spacing: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            margin-bottom: 25px;
         }
 
-        .header h1 span {
-            -webkit-text-fill-color: initial;
+        .main-title span {
             color: #d4af37;
-            font-size: 26px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+            margin: 0 10px;
         }
 
-        /* Поиск */
+        /* Поле поиска */
         .search-container {
-            max-width: 550px;
-            margin: 0 auto 45px auto;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
         }
 
         .search-input {
             width: 100%;
-            padding: 15px 22px;
-            background: rgba(18, 18, 24, 0.85);
+            padding: 12px 20px;
+            background: rgba(12, 12, 16, 0.8);
             border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 30px;
+            border-radius: 20px;
             color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
+            font-size: 13px;
             outline: none;
+            text-align: center;
             transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .search-input::placeholder {
-            color: #8a8a93;
         }
 
         .search-input:focus {
             border-color: #d4af37;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35), inset 0 0 5px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
         }
 
-        /* Заголовки секций */
+        /* Плашка разделов */
         .section-title {
             text-align: center;
             font-family: 'Cinzel', serif;
-            font-size: 21px;
+            font-size: 18px;
             font-weight: 700;
             color: #f3e5ab;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin: 60px 0 35px 0;
-            padding: 14px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.12), transparent);
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            margin: 40px auto 30px auto;
+            padding: 10px 20px;
+            max-width: 980px;
+            background: rgba(18, 18, 24, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
-        /* Сетка СОТ */
+        /* Контейнер сетки сот */
         .honeycomb {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 20px;
+            gap: 12px 14px;
+            max-width: 1050px;
+            margin: 0 auto 30px auto;
         }
 
-        /* Сота со стилевым градиентным бордером */
+        /* Ограничиваем ширину первого ряда, чтобы влезало ровно 5 сот, а остальные уходили вниз */
+        .honeycomb-grid {
+            max-width: 1060px;
+        }
+
+        /* Оболочка соты */
         .cell {
-            width: 195px;
-            height: 220px;
-            background: linear-gradient(135deg, #d4af37 0%, #4a3b10 50%, #d4af37 100%);
+            width: 190px;
+            height: 215px;
+            background: linear-gradient(135deg, #d4af37 0%, #3a2e0c 50%, #d4af37 100%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2px;
-            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             cursor: pointer;
-            margin-bottom: -15px;
+            margin-bottom: -20px; /* Отрицательный отступ создаёт нахлест рядов */
         }
 
-        .cell-content {
+        .cell:hover {
+            transform: translateY(-5px) scale(1.03);
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+        }
+
+        /* Внутренняя область соты */
+        .cell-inner {
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, #1a1921 0%, #0d0d12 100%);
+            background: #0f0f13;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 18px 12px;
-            gap: 6px;
-            position: relative;
+            padding: 15px;
         }
 
-        .cell:hover {
-            transform: scale(1.1) translateY(-5px);
-            filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.85));
-            z-index: 10;
-        }
-
-        /* Данные внутри соты */
-        .cell .name {
+        .cell-name {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 14px;
             color: #ffffff;
-            line-height: 1.25;
-            text-shadow: 0 0 5px rgba(0,0,0,0.8);
+            margin-bottom: 6px;
         }
 
-        .cell .rank-fam {
+        .cell-role {
             font-size: 11px;
-            font-weight: 600;
             color: #d4af37;
-            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 2px;
         }
 
-        .cell .rank-serv {
+        .cell-sub {
             font-size: 10px;
-            color: #9a9a9e;
+            color: #888;
+            margin-bottom: 10px;
         }
 
-        .cell .status {
+        .status {
             font-size: 9px;
             font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 5px;
-            margin-top: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 3px 8px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 10px;
+            gap: 4px;
         }
 
-        .status-active { color: #2ecc71; }
-        .status-inactive { color: #e74c3c; }
-
-        .dot {
+        .status::before {
+            content: '';
+            display: inline-block;
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            display: inline-block;
         }
-        .dot-active { background-color: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
-        .dot-inactive { background-color: #e74c3c; box-shadow: 0 0 8px #e74c3c; }
+
+        .status.active {
+            color: #2ecc71;
+        }
+
+        .status.active::before {
+            background-color: #2ecc71;
+            box-shadow: 0 0 6px #2ecc71;
+        }
+
+        .status.inactive {
+            color: #e74c3c;
+        }
+
+        .status.inactive::before {
+            background-color: #e74c3c;
+            box-shadow: 0 0 6px #e74c3c;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Фон частиц -->
     <div id="particles-js"></div>
 
-    <div class="container">
-        
-        <div class="btn-back-container">
-            <a href="https://vladwong228.github.io/Wong-Emperia/" class="btn-back">&#129144; На главную страницу</a>
-        </div>
-
-        <div class="header">
-            <h1><span>&#9830;</span> СОСТАВ СЕМЬИ WONG <span>&#9830;</span></h1>
-        </div>
-
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Поиск по нику, должности или организации...">
-        </div>
-
-        <!-- РУКОВОДСТВО СЕМЬИ -->
-        <div class="section-title">Руководство семьи</div>
-        <div class="honeycomb">
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Malik Wong</div>
-                    <div class="rank-fam">Лидер</div>
-                    <div class="rank-serv">Следящий МО</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Lina Strogina</div>
-                    <div class="rank-fam">Заместитель</div>
-                    <div class="rank-serv">Секретарь МО</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активна</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Yumi Ramirez</div>
-                    <div class="rank-fam">Заместитель</div>
-                    <div class="rank-serv">ЗГС МЮ</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активна</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Makima Watson</div>
-                    <div class="rank-fam">Заместитель</div>
-                    <div class="rank-serv">Следящая ГОС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активна</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Rafael Svitinin</div>
-                    <div class="rank-fam">Заместитель</div>
-                    <div class="rank-serv">Следящий ГОС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Kanade Tachibana</div>
-                    <div class="rank-fam">Дизайнер</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Charles Wong</div>
-                    <div class="rank-fam">Важная персона</div>
-                    <div class="rank-serv">8 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- АДМИНИСТРАЦИЯ СЕРВЕРА -->
-        <div class="section-title">Администрация сервера</div>
-        <div class="honeycomb">
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Alexander Gonzalez</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">ЗГС МО</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Alan Ramirez</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Тех. Админ</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Vildan Galante</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">ГС ГОС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Maxim Klar</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Следящий НО</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Adelina Keln</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Следящая ЦА</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активна</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Pavel Levchuk</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">ГС ЦА</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Chris Ramirez</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">ЗГС ГОС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Conor Reagen</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">ГС Гетто</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Matthew Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Следящий МО</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Benjamin Clarcson</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Следящий МО</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">IIya Kacincev</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Хелпер</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Hawk Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">ПГС МО</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ЛИДЕРЫ И ЗАМЕСТИТЕЛИ ОРГАНИЗАЦИЙ -->
-        <div class="section-title">Лидеры и заместители организаций</div>
-        <div class="honeycomb">
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Montgomery Ramirez</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">10 ФБР</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Roma Chikatilo</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">9 FBI</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Entisy Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">10 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Asxa Prince</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">10 ЛСПД</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Jayden Ostergaard</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Судья</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Laurence Ramirez</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">9 FBI</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Nekko Necromancy</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">10 ТСР</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Albert Markelovani</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">10 РКШД</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Matrix Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">9 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Bear Urban</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">9 ЛСа</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Anakin Muller</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">9 СМИ ЛС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Kimura Yozakura</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">9 ЛСПД</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ЧЛЕНЫ СЕМЬИ -->
-        <div class="section-title">Члены семьи</div>
-        <div class="honeycomb">
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Lans Wilsson</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Vlad Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Matrix Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">7 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Kirill Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Aren Margelov</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Roman Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Maks Wonger</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Shadow Shinigami</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">8 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Katana Pacage</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">8 СФПД</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Ryota Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">8 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Trent Marseille</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">8 ТСР</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Samir Gadjiev</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Marsel Daniarovich</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Brian Dawely</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Gost Wonger</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Mario Sunblaze</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Kenzo Kross</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Andrei Kuskovv</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Kawka Allen</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Archez Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Filip Mellow</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Akari Watanabe</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Gretta Ostergaard</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-inactive"><span class="dot dot-inactive"></span>Неактив</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Francesco Kennedy</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">8 ФБР</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Liminar Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">4 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Mister Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">5 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Evgeniy Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">7 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Mesejuki Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">Игрок</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Miha Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">5 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-            <div class="cell">
-                <div class="cell-content">
-                    <div class="name">Guram Wong</div>
-                    <div class="rank-fam">Член семьи</div>
-                    <div class="rank-serv">6 ВМС</div>
-                    <div class="status status-active"><span class="dot dot-active"></span>Активен</div>
-                </div>
-            </div>
-        </div>
-
+    <!-- Кнопка возврата -->
+    <div class="top-btn">
+        <a href="#">&larr; НА ГЛАВНУЮ СТРАНИЦУ</a>
     </div>
 
+    <!-- Главный заголовок -->
+    <h1 class="main-title"><span>&amp;</span> СОСТАВ СЕМЬИ WONG <span>&amp;</span></h1>
+
+    <!-- Поиск -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Поиск по нику, должности или организации...">
+    </div>
+
+    <!-- Заголовок блока -->
+    <div class="section-title">РУКОВОДСТВО СЕМЬИ</div>
+
+    <!-- Сетка сот (5 элементов в верхнем ряду, 2 соты под ними) -->
+    <div class="honeycomb honeycomb-grid">
+        <!-- 1: Malik Wong -->
+        <div class="cell">
+            <div class="cell-inner">
+                <div class="cell-name">Malik Wong</div>
+                <div class="cell-role">Лидер</div>
+                <div class="cell-sub">Следящий МО</div>
+                <div class="status active">АКТИВЕН</div>
+            </div>
+        </div>
+
+        <!-- 2: Lina Strogina -->
+        <div class="cell">
+            <div class="cell-inner">
+                <div class="cell-name">Lina Strogina</div>
+                <div class="cell-role">Заместитель</div>
+                <div class="cell-sub">Секретарь МО</div>
+                <div class="status active">АКТИВНА</div>
+            </div>
+        </div>
+
+        <!-- 3: Yumi Ramirez -->
+        <div class="cell">
+            <div class="cell-inner">
+                <div class="cell-name">Yumi Ramirez</div>
+                <div class="cell-role">Заместитель</div>
+                <div class="cell-sub">ЗГС МЮ</div>
+                <div class="status active">АКТИВНА</div>
+            </div>
+        </div>
+
+        <!-- 4: Makima Watson -->
+        <div class="cell">
+            <div class="cell-inner">
+                <div class="cell-name">Makima Watson</div>
+                <div class="cell-role">Заместитель</div>
+                <div class="cell-sub">Следящая ГОС</div>
+                <div class="status active">АКТИВНА</div>
+            </div>
+        </div>
+
+        <!-- 5: Rafael Svitinin -->
+        <div class="cell">
+            <div class="cell-inner">
+                <div class="cell-name">Rafael Svitinin</div>
+                <div class="cell-role">Заместитель</div>
+                <div class="cell-sub">Следящий ГОС</div>
+                <div class="status active">АКТИВЕН</div>
+            </div>
+        </div>
+
+        <!-- 6: Kanade Tachibana (Второй ряд слева) -->
+        <div class="cell">
+            <div class="cell-inner">
+                <div class="cell-name">Kanade Tachibana</div>
+                <div class="cell-role">Дизайнер</div>
+                <div class="cell-sub">Игрок</div>
+                <div class="status inactive">НЕАКТИВЕН</div>
+            </div>
+        </div>
+
+        <!-- 7: Charles Wong (Второй ряд справа) -->
+        <div class="cell">
+            <div class="cell-inner">
+                <div class="cell-name">Charles Wong</div>
+                <div class="cell-role">Важная персона</div>
+                <div class="cell-sub">8 ВМС</div>
+                <div class="status active">АКТИВЕН</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Инициализация particles.js -->
     <script>
-        // Анимация фоновых золотых частиц
-        particlesJS('particles-js', {
+        particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#d4af37" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.25, "random": true },
-                "size": { "value": 3, "random": true },
+                "number": {
+                    "value": 45,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#d4af37"
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
                 "line_linked": {
                     "enable": true,
                     "distance": 140,
                     "color": "#d4af37",
-                    "opacity": 0.15,
+                    "opacity": 0.3,
                     "width": 1
                 },
                 "move": {
@@ -820,30 +377,25 @@
             "interactivity": {
                 "detect_on": "canvas",
                 "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "onclick": { "enable": false },
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false
+                    },
                     "resize": true
                 },
                 "modes": {
-                    "grab": { "distance": 160, "line_linked": { "opacity": 0.4 } }
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.6
+                        }
+                    }
                 }
             },
             "retina_detect": true
-        });
-
-        // Живой поиск
-        document.getElementById('searchInput').addEventListener('keyup', function() {
-            let filter = this.value.toLowerCase();
-            let cells = document.querySelectorAll('.cell');
-
-            cells.forEach(function(cell) {
-                let text = cell.textContent.toLowerCase();
-                if (text.includes(filter)) {
-                    cell.style.display = "flex";
-                } else {
-                    cell.style.display = "none";
-                }
-            });
         });
     </script>
 </body>
